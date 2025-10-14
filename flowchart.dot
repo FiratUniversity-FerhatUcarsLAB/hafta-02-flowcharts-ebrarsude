@@ -1,0 +1,56 @@
+İsim - Soy isim: Ebrar Sude Yıldırım 
+Öğrenci No:250541104
+
+sistemin kısa açıklaması (maks. 5-6 satır)
+digraph ATM {
+    rankdir=TB;
+    node [shape=box, fontname="Helvetica"];
+
+    // Başlangıç ve bitiş
+    Start [shape=ellipse, label="BAŞLA"];
+    InsertCard [label="Kart Takıldı"];
+    EnterPIN [label="PIN Gir"];
+    CheckPIN [shape=diamond, label="PIN Doğru mu?"];
+    WrongPIN [label="Hatalı PIN\nDeneme sayısını arttır"];
+    TryAgain [shape=diamond, label="Deneme < 3 mü?"];
+    Blocked [shape=ellipse, label="Kart Bloke Edildi\nBİTİR"];
+    Menu [label="ANA MENÜ:\n1-Bakiye\n2-Para Çek\n3-Çıkış"];
+    Choice [shape=diamond, label="Seçim nedir?"];
+    Balance [label="Bakiyeyi Göster"];
+    Withdraw [label="Çekilecek miktarı gir"];
+    CheckAmount [shape=diamond, label="Miktar ≤ Bakiye mi?"];
+    Dispense [label="Nakit Veriliyor\n(Bakiye Güncelle)"];
+    Insufficient [label="Yetersiz Bakiye"];
+    Exit [shape=ellipse, label="Kart İade / BİTİR"];
+    Invalid [label="Geçersiz Seçim"];
+
+    // Akış bağlantıları
+    Start -> InsertCard;
+    InsertCard -> EnterPIN;
+    EnterPIN -> CheckPIN;
+
+    CheckPIN -> Menu [label="Evet"];
+    CheckPIN -> WrongPIN [label="Hayır"];
+
+    WrongPIN -> TryAgain;
+    TryAgain -> EnterPIN [label="Evet"];
+    TryAgain -> Blocked [label="Hayır"];
+
+    Menu -> Choice;
+
+    Choice -> Balance [label="1"];
+    Choice -> Withdraw [label="2"];
+    Choice -> Exit [label="3"];
+    Choice -> Invalid [label="Diğer"];
+
+    Balance -> Menu;
+    Invalid -> Menu;
+
+    Withdraw -> CheckAmount;
+    CheckAmount -> Dispense [label="Evet"];
+    CheckAmount -> Insufficient [label="Hayır"];
+    Insufficient -> Menu;
+    Dispense -> Menu;
+
+    Exit -> Start [style=dashed, label="Yeni işlem"];
+}
