@@ -1,0 +1,35 @@
+Ad soyad: Ebrar Sude Yıldırım
+Öğrenci no:250541104
+  digraph HastaneRandevuSistemi {
+    rankdir=TB; // Yukarıdan aşağıya akış
+    node [shape=box, style=rounded, fontname="Helvetica"];
+
+    Baslat [label="Sistem Başlat", shape=ellipse]
+    KullaniciGiris [label="Kullanıcı Girişi / Kayıt"]
+    AnaMenu [label="Ana Menü\n1. Doktor Seç\n2. Randevuları Gör\n3. Çıkış", shape=diamond]
+
+    DoktorListesi [label="Doktor ve Branşları Listele"]
+    RandevuSec [label="Randevu Tarih ve Saat Seç"]
+    RandevuOnay [label="Randevuyu Onayla"]
+
+    RandevuGoruntule [label="Alınan Randevuları Görüntüle"]
+    RandevuIptal [label="Randevu İptal Et"]
+
+    Cikis [label="Çıkış", shape=ellipse]
+
+    // Akışlar
+    Baslat -> KullaniciGiris
+    KullaniciGiris -> AnaMenu
+
+    AnaMenu -> DoktorListesi [label="1"]
+    DoktorListesi -> RandevuSec
+    RandevuSec -> RandevuOnay
+    RandevuOnay -> AnaMenu
+
+    AnaMenu -> RandevuGoruntule [label="2"]
+    RandevuGoruntule -> RandevuIptal [label="Randevu İptal Etmek İster mi?", shape=diamond]
+    RandevuIptal -> AnaMenu [label="Evet"]
+    RandevuGoruntule -> AnaMenu [label="Hayır"]
+
+    AnaMenu -> Cikis [label="3"]
+}
