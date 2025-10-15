@@ -1,0 +1,13 @@
+Ad soyad: Ebrar Sude Yıldırım
+Öğrenci no: 250541104
+BEN:
+Hastane randevu sistemi flowchart.dot-dot kodu şeklinde yazar mısın?
+
+LLM:
+Elbette! İşte hastane randevu sistemi için temel akışları gösteren Graphviz DOT kodu şeklinde yazar.
+
+BEN:
+Şimdi de bunu pseudocode sözde kod şeklinde yazar mısın?
+
+LLM:
+Tabii! İşte hastane randevu sistemi için sözde kod:
