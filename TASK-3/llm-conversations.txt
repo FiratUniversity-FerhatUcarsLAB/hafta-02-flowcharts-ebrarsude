@@ -1,0 +1,11 @@
+Ad soyad: Ebrar Sude Yıldırım
+Öğrenci no:250541104
+BEN:
+Alışveriş sistemi pseudocode.md- sözde kod yazar mısın
+LLM:
+İşte basit bir alışveriş sistemi için temel işlevleri içeren örnek bir sözde kod (pseudocode) yazar
+BEN:
+Şimdi flowchart.dot-dot kodu yazar mısın
+
+LLM:
+Aşağıda alışveriş sistemi için sade bir akış diyagramı (flowchart) DOT kodu yer alıyor
