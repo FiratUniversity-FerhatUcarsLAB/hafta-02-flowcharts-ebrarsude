@@ -1,7 +1,7 @@
 Ad soyad: Ebrar Sude Yıldırım
 Öğrenci no: 250541104
 BEN:
-Hastane randevu sistemi flowchart.dot-dot kodu şeklinde yazar mısın?
+Hastane randevu sistemi ile ilgili ayrıntıları içeren flowchart.dot-dot kodu şeklinde yazar mısın?
 
 LLM:
 Elbette! İşte hastane randevu sistemi için temel akışları gösteren Graphviz DOT kodu şeklinde yazar.
