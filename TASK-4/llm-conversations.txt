@@ -1,0 +1,10 @@
+Ad soyad:Ebrar Sude Yıldırım
+Öğrenci no: 250541104
+BEN:
+Üniversite ders kayıt sistemi ile ilgili tüm adımları modelleyen flowchart.dot-dot kodu yazar mısın?
+LLM:
+Tabii! İşte temel akışları gösteren Graphviz DOT kodu:(Kodu yazar)
+BEN:
+Şimdi bunu pseudocode koda çevirir misin?
+LLM:
+Tabii! İşte detaylı sözde kod:(kodu yazar)
