@@ -1,0 +1,42 @@
+Ad soyad: Ebrar Sude Yıldırım
+Öğrenci no:250541104
+digraph AlisverisSistemi {
+    rankdir=TB; // Akış yukarıdan aşağıya
+    node [shape=box, style=rounded, fontname="Helvetica"];
+
+    Start [label="Başlat", shape=ellipse]
+    KullaniciGirisi [label="Kullanıcı Girişi / Kayıt"]
+    AnaMenu [label="Ana Menü", shape=diamond]
+
+    UrunleriListele [label="Ürünleri Listele"]
+    UrunSec [label="Ürün Seç"]
+    SepeteEkle [label="Sepete Ekle"]
+
+    SepetiGoruntule [label="Sepeti Görüntüle"]
+    OdemeKontrol [label="Satın Almak İstiyor mu?", shape=diamond]
+    OdemeYap [label="Ödeme Yap"]
+    SiparisiKaydet [label="Siparişi Kaydet"]
+    SepetiTemizle [label="Sepeti Temizle"]
+
+    SiparisGecmisi [label="Sipariş Geçmişini Gör"]
+
+    Cikis [label="Çıkış", shape=ellipse]
+
+    // Akışlar
+    Start -> KullaniciGirisi
+    KullaniciGirisi -> AnaMenu
+
+    AnaMenu -> UrunleriListele [label="1. Ürünler"]
+    UrunleriListele -> UrunSec -> SepeteEkle -> AnaMenu
+
+    AnaMenu -> SepetiGoruntule [label="2. Sepet"]
+    SepetiGoruntule -> OdemeKontrol
+    OdemeKontrol -> OdemeYap [label="Evet"]
+    OdemeYap -> SiparisiKaydet -> SepetiTemizle -> AnaMenu
+    OdemeKontrol -> AnaMenu [label="Hayır"]
+
+    AnaMenu -> SiparisGecmisi [label="3. Siparişler"]
+    SiparisGecmisi -> AnaMenu
+
+    AnaMenu -> Cikis [label="4. Çıkış"]
+}
