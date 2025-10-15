@@ -1,0 +1,43 @@
+Ad soyad:Ebrar Sude Yıldırım
+Öğrenci no:250541104
+digraph UniversiteDersKayitSistemi {
+    rankdir=TB;
+    node [shape=box, style=rounded, fontname="Helvetica"];
+
+    Baslat [label="Sistem Başlat", shape=ellipse]
+    OgrenciGiris [label="Öğrenci Girişi / Kayıt"]
+    AnaMenu [label="Ana Menü\n1. Dersleri Görüntüle ve Seç\n2. Kayıtlı Dersleri Görüntüle\n3. Çıkış", shape=diamond]
+
+    DersListesi [label="Ders Listesini Göster"]
+    KontenjanVeCakismaKontrol [label="Kontenjan ve Saat Çakışması Kontrolü"]
+    DersSecimHatasi [label="Seçim Hatası: Çakışma veya Kontenjan Doldu", shape=box, style="rounded,dashed", color=red]
+    DersSec [label="Ders Seçimi Yap"]
+    KayitOnay [label="Ders Kaydını Onayla"]
+
+    KayitliDersler [label="Kayıtlı Dersleri Görüntüle"]
+    DersIptalSorgu [label="Ders İptal Etmek İster misiniz?", shape=diamond]
+    DersIptal [label="Ders İptal Et"]
+
+    Cikis [label="Çıkış", shape=ellipse]
+
+    // Akışlar
+    Baslat -> OgrenciGiris
+    OgrenciGiris -> AnaMenu
+
+    AnaMenu -> DersListesi [label="1"]
+    DersListesi -> DersSec
+    DersSec -> KontenjanVeCakismaKontrol
+    KontenjanVeCakismaKontrol -> KayitOnay [label="Uygun"]
+    KontenjanVeCakismaKontrol -> DersSecimHatasi [label="Hata"]
+    DersSecimHatasi -> DersSec [label="Tekrar Deneyin"]
+
+    KayitOnay -> AnaMenu
+
+    AnaMenu -> KayitliDersler [label="2"]
+    KayitliDersler -> DersIptalSorgu
+    DersIptalSorgu -> DersIptal [label="Evet"]
+    DersIptalSorgu -> AnaMenu [label="Hayır"]
+    DersIptal -> AnaMenu
+
+    AnaMenu -> Cikis [label="3"]
+}
