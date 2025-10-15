@@ -1,4 +1,10 @@
 Ad soyad:Ebrar Sude Yıldırım
 Öğrenci no:250541104
 BEN:
-Akıllı ev güvenlik sistemi 
+Akıllı ev güvenlik sistemi ile ilgili tüm adımları modelleyen dot kodu yazar mısın?
+LLM:
+Tabii! İşte temel akışları gösteren Graphviz DOT kodu:(Kodu yazar)
+BEN:
+Şimdi bunu pseudocode koda çevirir misin?
+LLM:
+Tabii! İşte Akıllı Ev Güvenlik Sistemi için Türkçe sözde kod:(kodu yazar)
