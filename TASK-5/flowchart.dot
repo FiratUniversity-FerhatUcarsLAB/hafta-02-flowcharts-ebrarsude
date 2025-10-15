@@ -1,0 +1,40 @@
+Ad soyad:Ebrar Sude Yıldırım
+Öğrenci no:250541104
+  digraph AkilliEvGuvenlikSistemi {
+    rankdir=TB;
+    node [shape=box, style=rounded, fontname="Helvetica"];
+
+    Baslat [label="Sistem Başlat", shape=ellipse]
+    KullaniciGiris [label="Kullanıcı Girişi"]
+    AnaMenu [label="Ana Menü\n1. Güvenlik Sistemini Aktif Et\n2. Güvenlik Sistemini Pasif Et\n3. Kamera İzle\n4. Çıkış", shape=diamond]
+
+    GuvenlikAktif [label="Güvenlik Sistemini Aktif Et"]
+    GuvenlikPasif [label="Güvenlik Sistemini Pasif Et"]
+    KameraIzle [label="Kamera Canlı İzleme"]
+    HareketAlgilandiMi [label="Hareket Algılandı mı?", shape=diamond]
+    AlarmCalistir [label="Alarmı Çalıştır"]
+    BildirimGonder [label="Kullanıcıya Bildirim Gönder"]
+
+    Cikis [label="Çıkış", shape=ellipse]
+
+    // Akışlar
+    Baslat -> KullaniciGiris
+    KullaniciGiris -> AnaMenu
+
+    AnaMenu -> GuvenlikAktif [label="1"]
+    GuvenlikAktif -> HareketAlgilandiMi
+
+    AnaMenu -> GuvenlikPasif [label="2"]
+    GuvenlikPasif -> AnaMenu
+
+    AnaMenu -> KameraIzle [label="3"]
+    KameraIzle -> AnaMenu
+
+    AnaMenu -> Cikis [label="4"]
+
+    HareketAlgilandiMi -> AlarmCalistir [label="Evet"]
+    HareketAlgilandiMi -> AnaMenu [label="Hayır"]
+
+    AlarmCalistir -> BildirimGonder
+    BildirimGonder -> AnaMenu
+}
