@@ -1,7 +1,7 @@
 Ad soyad: Ebrar Sude Yıldırım
 Öğrenci no:250541104
 BEN:
-Alışveriş sistemi pseudocode.md- sözde kod yazar mısın
+Online alışveriş ile ilgili ayrıntılı pseudocode.md- sözde kod yazar mısın
 LLM:
 İşte basit bir alışveriş sistemi için temel işlevleri içeren örnek bir sözde kod (pseudocode) yazar
 BEN:
